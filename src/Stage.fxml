@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.canvas.Canvas?>
+
+<?import java.awt.Color?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:id="firstScene"
+            fx:controller="Controller"
+            maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            stylesheets="@Style.css">
+
+    <center>
+        <StackPane fx:id="mainPane"
+                   maxHeight="1000" maxWidth="15000"
+                   minHeight="800" minWidth="1500"
+                   style="-fx-background-repeat: no-repeat; -fx-background-size:100% 100%; -fx-background-color:rgba(0,0,0,0.7);"
+                   BorderPane.alignment="CENTER">
+
+            <VBox BorderPane.alignment="CENTER"
+                  alignment="CENTER"
+                  spacing="20">
+
+
+            <Canvas fx:id="drawPane" />
+
+                <StackPane  BorderPane.alignment="CENTER">
+
+                    <HBox  BorderPane.alignment="CENTER"
+                           alignment="CENTER"
+                           spacing="20">
+
+                        <ColorPicker fx:id="colorPicker"
+                                     onAction="#changeColor"
+                                     visible="false">
+                        </ColorPicker>
+
+
+                    </HBox>
+
+                </StackPane>
+
+            </VBox>
+
+            <VBox fx:id="vBox"
+                  BorderPane.alignment="CENTER"
+                  alignment="CENTER"
+                  spacing="20">
+
+
+                    <ImageView fitHeight="100.0"
+                               fitWidth="100.0"
+                               pickOnBounds="true"
+                               preserveRatio="true">
+                            <Image url="/Images/uploadImage.png" />
+                    </ImageView>
+
+                    <Button fx:id="uploadImage"
+                            text="Upload Your Grayscale Image"
+                            onAction="#uploadImage"/>
+
+            </VBox>
+
+        </StackPane>
+
+    </center>
+
+    <bottom>
+
+    </bottom>
+
+
+</BorderPane>
